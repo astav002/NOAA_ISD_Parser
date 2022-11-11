@@ -1,0 +1,60 @@
+CDS_MDS= {
+            'var_length': (0, 4),          # begin CDS section
+            'usaf_id' : (4, 6), 
+            'wban': (10, 5), 
+            'date': (15, 8), 
+            'gmt': (23, 4),                # "gmt" = Greenwich Mean Time
+            'data_source': (27, 1) ,
+            'lat': (28, 6) ,
+            'long': (34, 7), 
+            'report_type': (41, 5), 
+            'elev': (46, 5) ,
+            'call_letters': (51, 5) ,
+            'qc_level': (56, 4) ,
+            'wind_dir': (60, 3),             # begin MDS section
+            'wind_dir_flag': (63, 1) ,
+            'wind_type': (64, 1), 
+            'wind_speed': (65, 4) ,
+            'wind_speed_flag': (69, 1) ,
+            'sky_ceiling': (70, 5), 
+            'sky_ceil_flag': (75, 1),
+            'sky_ceil_determ': (76, 1), 
+            'sky_cavok': (77, 1), 
+            'visibility': (78, 6), 
+            'vis_flag': (84, 1), 
+            'vis_var': (85, 1), 
+            'vis_var_flag': (86, 1), 
+            'air_temp': (87, 5), 
+            'air_temp_flag': (92, 1), 
+            'dew_point': (93, 5) ,
+            'dew_point_flag': (98, 1), 
+            'sea_lev_press': (99, 5), 
+            'sea_levp_flag': (104, 1), 
+        }
+
+
+#NOTE the order of the fields is fixed --> DO NOT CHANGE THESE, follow the ISD GUIDANCE
+
+ADD_DATA = {
+            "AA1":{"title": "Precipitation period quanity", 
+                    "fields": {"pcp_quantity_hours":2,
+                            "pcp_depth_dim_mm":4,
+                            "pcp_condition_code":1,
+                            "pcp_quality_code":1}},
+            "AW1":{"title": "Weather Observation", 
+                    "fields": {"present_wth_obs":2,
+                            "quality_code":1}}, 
+            "GH1":{"title": "Hourly Solar Data", 
+                    "fields": {"solarad":5,
+                            "solarad_qc":1,
+                            "solarad_flag":1,
+                            "solarad_min":5,
+                            "solarad_min_qc":1,
+                            "solarad_min_flag":1,
+                            "solarad_max":5,
+                            "solarad_max_qc":1,
+                            "solarad_max_flag":1,
+                            "solarad_std":5,
+                            "solarad_std_qc":1,
+                            "solarad_std_flag":1}},                                            
+        }
